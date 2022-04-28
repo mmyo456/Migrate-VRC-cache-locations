@@ -1,41 +1,40 @@
 @echo off
 echo ------
-echo °Ú£¡
+echo æ‘†ï¼
 echo ------
-echo Github£ºhttps://github.com/Mingming8886/Migrate-VRC-cache-locations
-echo ×¢Òâ:¸Ã²Ù×÷»áÉ¾³ýVRCµÄËùÓÐ»º´æ
-echo  Ö®Ç°¼ÓÔØ¹ýµÄÎïÆ·¶¼ÐèÖØÐÂ¼ÓÔØ
-echo ²¢ÇÒ³ÌÐò½«»á½«VRCHTAÄ¬ÈÏµÄ´æ´¢ÇøÖØ¶¨ÏòÖÁDÅÌµÄVRChatÄ¿Â¼ÖÐ
-echo PS£ºÈçÄúÊÇ¸ÕÏÂÔØVRCHATÂé·³ÄúÆô¶¯Ò»´ÎÔÙÀ´²Ù×÷
-echo ÊÇ·ñ²Ù×÷£¿»Ø³µ=È·ÈÏ£¬¹Ø±Õ³ÌÐò=È¡Ïû
+echo Githubï¼šhttps://github.com/Mingming8886/Migrate-VRC-cache-locations
+echo æ³¨æ„:è¯¥æ“ä½œä¼šåˆ é™¤VRCçš„æ‰€æœ‰ç¼“å­˜
+echo  ä¹‹å‰åŠ è½½è¿‡çš„ç‰©å“éƒ½éœ€é‡æ–°åŠ è½½
+echo PSï¼šå¦‚æ‚¨æ˜¯åˆšä¸‹è½½VRCHATéº»çƒ¦æ‚¨å¯åŠ¨ä¸€æ¬¡å†æ¥æ“ä½œ
+echo æ˜¯å¦æ“ä½œï¼Ÿå›žè½¦=ç¡®è®¤ï¼Œå…³é—­ç¨‹åº=å–æ¶ˆ
 PAUSE
 net session >nul 2>&1
 if %errorLevel% == 0 (
-    rem Success: [ÈÕÖ¾] È·ÈÏ¹ÜÀíÔ±È¨ÏÞ³É¹¦!
+    rem Success: [æ—¥å¿—] ç¡®è®¤ç®¡ç†å‘˜æƒé™æˆåŠŸ!
 ) else (
-    echo [ÈÕÖ¾] ³ÌÐòÎÞ¹ÜÀíÔ±²Ù×÷£¬È¡ÏûËùÓÐ²Ù×÷!
-    echo        ²Ù×÷ÒÑ±»È¡Ïû!
+    echo [æ—¥å¿—] ç¨‹åºæ— ç®¡ç†å‘˜æ“ä½œï¼Œå–æ¶ˆæ‰€æœ‰æ“ä½œ!
+    echo        æ“ä½œå·²è¢«å–æ¶ˆ!
     echo.
-    echo [ÈÕÖ¾]:  ÇëÓÒ¼üÒÔ¹ÜÀíÔ±Éí·ÝÔËÐÐ¸Ã½Å±¾£¡
+    echo [æ—¥å¿—]:  è¯·å³é”®ä»¥ç®¡ç†å‘˜èº«ä»½è¿è¡Œè¯¥è„šæœ¬ï¼
     echo.
     pause
     exit
 )
 
 
-set /p dpath=ÇëÊäÈëÄ¿µÄÂ·¾¶£¨ÀýÈç£ºD:\Temp £¬¹¤¾ß»á×Ô¶¯ÔÚÄãÊäÈëµÄÂ·¾¶ÏÂ´´½¨VRChat_CacheÎÄ¼þ¼Ð²¢½¨Á¢ÈíÁ¬½Ó£©:
-echo ÄãÊäÈëµÄÂ·¾¶ÊÇ %dpath% 
+set /p dpath=è¯·è¾“å…¥ç›®çš„è·¯å¾„ï¼ˆä¾‹å¦‚ï¼šD:\Temp ï¼Œå·¥å…·ä¼šè‡ªåŠ¨åœ¨ä½ è¾“å…¥çš„è·¯å¾„ä¸‹åˆ›å»ºVRChat_Cacheæ–‡ä»¶å¤¹å¹¶å»ºç«‹è½¯è¿žæŽ¥ï¼‰:
+echo ä½ è¾“å…¥çš„è·¯å¾„æ˜¯ %dpath% 
 pause
 md %dpath%\VRChat_Cache
-echo ¸´ÖÆÎÄ¼þ......
+echo å¤åˆ¶æ–‡ä»¶......
 echo=
 xcopy %APPDATA%\..\LocalLow\VRChat %dpath%\VRChat_Cache /s /e /g /h
-echo É¾³ýÔ­Ä¿Â¼
+echo åˆ é™¤åŽŸç›®å½•
 echo=
 rd /s /q %APPDATA%\..\LocalLow\VRChat
-echo ´´½¨ÈíÁ¬½Ó
+echo åˆ›å»ºè½¯è¿žæŽ¥
 echo=
 mklink /d %APPDATA%\..\LocalLow\VRChat %dpath%\VRChat_Cache
-echo »º´æ×ªÒÆÍê³É
+echo ç¼“å­˜è½¬ç§»å®Œæˆ
 echo=
 pause
