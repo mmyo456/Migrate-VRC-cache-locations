@@ -3,12 +3,12 @@ title 自定义VRC缓存目录(禁止倒卖
 echo ------
 echo 摆！
 echo ------
-echo 作者博客：https://www.mmfo.top/
+echo 作者博客：https://qmq.me
 echo Github：https://github.com/Mingming8886/Migrate-VRC-cache-locations
-echo 注意:该操作会删除VRC的所有缓存
+echo 注意:该操作可能会删除VRC的所有缓存
 echo 之前加载过的物品都需重新加载
 echo PS：如您是刚下载VRCHAT麻烦您启动一次再来操作
-echo 版本号V: 1.4
+echo 版本号V: 1.5
 tasklist | find /i "VRChat.exe" >nul 2>nul && echo [日志] 检测到您的VRChat正在运行，请关闭再来操作！ || echo [日志] 未检测到你的VRChat请继续操作
 PAUSE
 net session >nul 2>&1
